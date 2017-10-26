@@ -112,7 +112,7 @@ $$ \theta_j:=\theta_j +\alpha (y^{(i)}-h_\theta(x^{(i)}))x_j^{(i)} $$
 
 ![matrix-derivatives](./image/notes1-matrix-derivatives.jpg)
 
-因此，这个梯度  $\nabla _A f(A)  $ 本身也是一个 $m \times n$ 的矩阵，其中的第 $(i,j)$ 个元素是 $\partial f/ \partial A_{ij}$。例如，假如$A=\begin{vmatrix} A_{11} & A_{12} \\	A_{21} & A_{22} \\ \end{vmatrix} $ 是一个 $2 \times 2$ 矩阵，然后给定的函数 $ f:\mathbb R^{2\times 2} \mapsto \mathbb R $ 为：
+因此，这个梯度  $ \nabla_A f(A)  ​$ 本身也是一个 $m \times n​$ 的矩阵，其中的第 $(i,j)​$ 个元素是 $\partial f/ \partial A_{ij}​$。例如，假如$ A=\begin{vmatrix} A_{11} & A_{12} \\	A_{21} & A_{22} \end{vmatrix} ​$ 是一个 $2 \times 2​$ 矩阵，然后给定的函数 $ f:\mathbb R^{2\times 2} \mapsto \mathbb R ​$ 为：
 
 $$ f(A) = \frac {3}{2}A_{11}+5A_{12}^2+A_{21}A_{22} $$
 
