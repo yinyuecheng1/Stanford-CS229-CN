@@ -34,24 +34,24 @@ Stanford 课程主页地址：[http://cs229.stanford.edu/](http://cs229.stanford
 
 ### 笔记一 \[[ps](./English_Materials_and_Assignments/Class_Notes/cs229-notes1.ps)\]\[[pdf](./English_Materials_and_Assignments/Class_Notes/cs229-notes1.pdf)\]\[[中文Markdown](./Translation/Notes/cs229-notes1-CN.md)\][中文PDF]
 
--  Supervised learning
--  Part I Linear Regression
-  -  1 LMS algorithm
-  -  2 The normal equations
+- Supervised learning
+- Part I Linear Regression
+  - 1 LMS algorithm
+  - 2 The normal equations
     - 2.1 Matrix derivatives
     - 2.2 Least squares revisited
-  -  3 Probabilistic interpretation
-  -  4 Locally weighted linear regression
--  Part II Classification and logistic regression
-  -  5 Logistic regression
-  -  6 Digression: The perceptron learning algorithm
-  -  7 Another algorithm for maximizing ℓ(θ)
--  Part III Generalized Linear Models
-  -  8 The exponential family
-  -  9 Constructing GLMs
-    -  9.1 Ordinary Least Squares
-    -  9.2 Logistic Regression
-    -  9.3 Softmax Regression
+  - 3 Probabilistic interpretation
+  - 4 Locally weighted linear regression
+- Part II Classification and logistic regression
+  - 5 Logistic regression
+  - 6 Digression: The perceptron learning algorithm
+  - 7 Another algorithm for maximizing ℓ(θ)
+- Part III Generalized Linear Models
+  - 8 The exponential family
+  - 9 Constructing GLMs
+    - 9.1 Ordinary Least Squares
+    - 9.2 Logistic Regression
+    - 9.3 Softmax Regression
 
 ### 笔记二 \[[ps](./English_Materials_and_Assignments/Class_Notes/cs229-notes2.ps)\]\[[pdf](./English_Materials_and_Assignments/Class_Notes/cs229-notes2.pdf)\]\[中文Markdown\][中文PDF]
 
@@ -160,7 +160,7 @@ Stanford 课程主页地址：[http://cs229.stanford.edu/](http://cs229.stanford
 
 - Part XII Independent Components Analysis
 
-## 笔记十二 \[[ps](./English_Materials_and_Assignments/Class_Notes/cs229-notes12.ps)\]\[[pdf](./English_Materials_and_Assignments/Class_Notes/cs229-notes12.pdf)]\[中文Markdown\][中文PDF]
+### 笔记十二 \[[ps](./English_Materials_and_Assignments/Class_Notes/cs229-notes12.ps)\]\[[pdf](./English_Materials_and_Assignments/Class_Notes/cs229-notes12.pdf)]\[中文Markdown\][中文PDF]
 
 - Part XIII Reinforcement Learning and Control
   - 1 Markov decision processes
