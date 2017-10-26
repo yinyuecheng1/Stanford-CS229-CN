@@ -38,4 +38,4 @@ Stanford 课程主页地址：[http://cs229.stanford.edu/](http://cs229.stanford
   - 监督学习，判别算法 \[[ps](./English_Materials_and_Assignments/Class_Notes/cs229-notes1.ps)\]\[[pdf](./English_Materials_and_Assignments/Class_Notes/cs229-notes1.pdf)\]\[[中文Markdown](./Translation/Notes/cs229-notes1-CN.md)\]
 - **问题集 0**\[[pdf](./English_Materials_and_Assignments/Problem_Set/ps0.pdf)\] （暂时没有汉化打算）
 
-## 第2讲  
+### 第2讲  
