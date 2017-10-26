@@ -2,7 +2,7 @@
 斯坦福大学 CS229 讲义部分的翻译，想法来自于 **[这个仓库](https://github.com/Kivy-CN/Stanford-CS-229-CN)** 。
 因为可能会对讲义内容有所修改补充，所以没有采用 Fork + PR 的形式，而是准备另起炉灶。然而，你看到的部分内容会和 [Kivy-CN](https://github.com/Kivy-CN) 等人贡献的内容类似。欢迎你维护上面提到的仓库中的翻译内容，他们已经获得了课程官方的授权。我们也欢迎所有人对此仓库进行维护和参与翻译优化工作。
 
-查看 Markdown 格式文件时，你需要安装谷歌浏览器插件 [GitHub with MathJax](https://chrome.google.com/webstore/detail/ioemnmodlmafdkllaclgeombjnmnbima) 以正常显示数学公式，在对应小节整体翻译完成后我们会上传简单的PDF版本，也欢迎其他人提供优化过的PDF版本文件。有任何建议和错误都在 Issues 板块提出，Pull Requests 会在第一时间审核。详细的贡献方式请查看 [这篇文档](./CONTRIBUTION.md)。
+查看 Markdown 格式文件时，你需要安装谷歌浏览器插件 [GitHub with MathJax](https://chrome.google.com/webstore/detail/ioemnmodlmafdkllaclgeombjnmnbima) 以正常显示数学公式，在对应小节整体翻译完成后我们会上传简单的PDF版本，也欢迎其他人提供优化过的PDF版本文件。有任何建议和错误都在 Issues 板块提出，Pull Requests 会在第一时间审核。详细的贡献方式请查看 [这篇文档](./CONTRIBUTING.md)。
 
 > 本仓库仅供 MIL 交流学习使用，并不是官方授权的中文翻译，请勿公开传播使用
 
