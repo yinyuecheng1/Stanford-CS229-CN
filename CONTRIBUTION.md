@@ -1,7 +1,7 @@
 # 当前文件目录结构
 
-根目录下：
-| English_Materials_and_Assignments （英文材料都放在这里） 
+根目录下：  
+| English_Materials_and_Assignments （英文材料都放在这里）   
 | -- Class_Notes （课程笔记，**当前主要翻译对象**）  
 | -- Discussion_Section （讨论内容）  
 | -- Problem_Set  （问题集）  
