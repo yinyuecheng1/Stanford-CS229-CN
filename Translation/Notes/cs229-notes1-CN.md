@@ -92,7 +92,7 @@ $$ \theta_j:=\theta_j +\alpha (y^{(i)}-h_\theta(x^{(i)}))x_j^{(i)} $$
 
 ![housing-price-line](./image/notes1-housing-price-line.jpg)
 
-如果添加上卧室数量作为输入特征，那么得到的结果就是 $θ_0 = 89.60, θ_1 = 0.1392, θ_2 = −8.738$.  
+如果添加上卧室数量作为输入特征，那么得到的结果就是 $θ_0 = 89.60, θ_1 = 0.1392, θ_2 = −8.738​$.  
 
 上面的结果就是使用批量梯度下降法来获得的。此外还有另外一种方法能够替代批量梯度下降法，这种方法效果也不错。如下所示：  
 
@@ -114,11 +114,7 @@ $$ \theta_j:=\theta_j +\alpha (y^{(i)}-h_\theta(x^{(i)}))x_j^{(i)} $$
 
 因此，这个梯度  $ \nabla_A f(A)  $ 本身也是一个 $m \times n$ 的矩阵，其中的第 $(i,j)$ 个元素是 $\partial f/ \partial A_{ij}$。举个例子，假如
 
-$$
-A=\begin{vmatrix} A_{11} & A_{12} \\
-                                  A_{21} & A_{22} 
-  \end{vmatrix}
-$$
+![](./image/notes1-A-example.jpg)
 
 是一个 $2 \times 2​$ 矩阵，然后给定的函数 $ f:\mathbb R^{2\times 2} \mapsto \mathbb R ​$ 为：
 
@@ -126,11 +122,7 @@ $$ f(A) = \frac {3}{2}A_{11}+5A_{12}^2+A_{21}A_{22} $$
 
 这里的 $ A_{ij} $ 表示的意思是矩阵 $A$ 的第 $(i,j)$ 个元素，于是就有了梯度：
 
-$$
-\nabla_A f(A) =\begin{bmatrix} \frac{3}{2} & 10A_{12} \\
-                                                        A_{22} & A_{21}            \\ 
-                           \end{bmatrix}
-$$
+![](./image/notes1-A-gd.jpg)
 
 接下来我们还要引入 **trace** 求迹运算，简写为 **tr**。对于一个给定的 $n \times n$ 的方阵$A$，它的迹定义为对角项之和：
 
@@ -200,4 +192,43 @@ $$ \theta= (X^TX )^{-1}X^T\overset{\rightarrow} y   $$
 
 
 
-## 3 概率解释
+## 3 概率解释（Probabilistic interpretation）
+
+在面对回归问题的时候，可能有这样一些疑问：为什么选择线性回归？尤其是为什么选择最小二乘法成本函数 $J$ ？在本节里，我们会给出一系列的概率基本假设，基于这些假设，就可以推出最小二乘法回归是一种非常自然的算法。  
+
+首先我们假设目标变量和输入值存在下面的关系：  
+
+$$ y^{(i)} = \theta^Tx^{(i)}+\epsilon^{(i)} $$
+
+上面的 $\epsilon^{(i)} $ 是误差项，用于考虑建模时忽略的变量所产生的影响（ 比如可能某些特征对于房价的影响很明显，但我们做回归的时候忽略掉了）或者随机的噪声（random noise）。让我们进一步假设 $\epsilon^{(i)} $ 是独立同分布的 （IID ，independently and identically distributed） ，服从高斯分布（Gaussian distribution ，也叫正态分布 Normal distribution），其平均值为 0，方差（variance）为 $\sigma^2$。据此， $\epsilon^{(i)} $ 的概率密度函数可以写成：  
+
+$$p(\epsilon^{(i)})=\frac{1}{\sqrt {2\pi}\sigma}exp(-\frac{(\epsilon{(i)})^2}{2\sigma^2})$$
+
+这意味着存在下面的等量关系：  
+
+$$p(y^{(i)}\mid x^{(i)};\theta)=\frac{1}{\sqrt {2\pi}\sigma} exp(- \frac {(y^{(i)}-\theta^Tx^{(i)})^2} {2\sigma^2})$$
+
+这里的记号 ”$p(y^{(i)}\mid x^{(i)};\theta)$“ 表示的是这是一个给定 $ x^{(i)} $ 的 $y^{(i)} $ 的分布，并且由 $\theta$ 参数化。注意我们这里不能将使用条件 $\theta (p(y^{(i)}\mid x^{(i)},\theta))$ ，因为 $\theta$ 并不是一个随机变量。此处 $y^{(i)}$ 的分布还可以写成 $y^{(i)} \mid x^{(i)};\theta \sim \cal N(\theta^Tx^{(i)},\sigma^2)$.
+
+给定设计矩阵$ X$ （包含了所有的 $x^{(i)}$）和 $\theta$， 那么$y^{(i)}$ 的分布是什么？数据的概率以 $p(\overset{\rightarrow}y \mid X;\theta)$ 的形式给出。当 $\theta$ 取固定值的时候，这经常被看作是一个关于 $\overset{\rightarrow}y$ （或者是 $X$ ）的函数。当我们想要显式地把它看做一个关于 $\theta$  的函数时，我们称之为 **似然（likelihood）** 函数：  
+
+![](./image/notes1-likelihood.jpg)
+
+结合之前对 $ε^{(i)}$ 的独立性假设 （这里对 $y^{(i)}$ 以及给定的 $x^{(i)}$ 也都做同样假设），就可以把上面这个等式改写成下面的形式：
+
+![](./image/notes1-likelihood-2.jpg)
+
+现在，给定了 $y^{(i)}$ 和 $x^{(i)}$ 之间关系的概率模型了，用什么方法来达到我们对参数 $\theta$ 的最佳猜测呢？ **极大似然法（maximum likelihood）** 告诉我们要选择能让数据的似然函数尽可能大的 $\theta $。也就是说，我们找的 $\theta$ 能够让函数 $L(θ)$ 取到最大值。  
+
+我们可以不直接这样做，而可以去最大化任何一个的有关 $L(θ)$ 的严格递增的函数。使用 **对数似然（log likelihood）** 函数 $\cal l(\theta)$ 来进行最大化，在求导的时候会简单许多：  
+
+![](./image/notes1-log-likelihood.jpg)
+
+可以发现，最大化 $\cal l(\theta)$ 其实就是最小化  
+
+$$ \frac {1}{2} \sum_{i=1}^{m} {(h_\theta(x^{(i)})-y^{(i)})^2} $$
+
+到这里我们能发现这个子式实际上就是 $J(\theta)$，也就是最原始的最小二乘成本函数（least-squares cost function）。总结一下也就是：在对数据进行概率假设的基础上，最小二乘回归得到的 $\theta$ 和最大似然法估计的 $\theta$ 是一致的。所以这是一系列的假设，其前提是认为最小二乘回归（least-squares regression）能够被判定为一种非常自然的方法，这种方法正好就进行了最大似然估计（maximum likelihood estimation）。（要注意，对于验证最小二乘法是否为一个良好并且合理的过程来说，这些概率假设并不是必须的，此外可能（也确实）有其他的自然假设能够用证明最小二乘法。）
+
+## 4 局部加权线性回归（Locally weighted linear regression）
+
