@@ -115,18 +115,22 @@ $$ \theta_j:=\theta_j +\alpha (y^{(i)}-h_\theta(x^{(i)}))x_j^{(i)} $$
 因此，这个梯度  $ \nabla_A f(A)  $ 本身也是一个 $m \times n$ 的矩阵，其中的第 $(i,j)$ 个元素是 $\partial f/ \partial A_{ij}$。举个例子，假如
 
 $$
-A=\begin{vmatrix} A_{11} & A_{12} 
-               \\ A_{21} & A_{22} 
+A=\begin{vmatrix} A_{11} & A_{12} \\
+                                  A_{21} & A_{22} 
   \end{vmatrix}
 $$
 
-是一个 $2 \times 2$ 矩阵，然后给定的函数 $ f:\mathbb R^{2\times 2} \mapsto \mathbb R $ 为：
+是一个 $2 \times 2​$ 矩阵，然后给定的函数 $ f:\mathbb R^{2\times 2} \mapsto \mathbb R ​$ 为：
 
 $$ f(A) = \frac {3}{2}A_{11}+5A_{12}^2+A_{21}A_{22} $$
 
 这里的 $ A_{ij} $ 表示的意思是矩阵 $A$ 的第 $(i,j)$ 个元素，于是就有了梯度：
 
-$$ \nabla _A f(A)  =\begin{bmatrix} \frac{3}{2} & 10A_{12} \\	A_{22} & A_{21} \\ \end{bmatrix} $$
+$$
+\nabla_A f(A) =\begin{bmatrix} \frac{3}{2} & 10A_{12} \\
+                                                        A_{22} & A_{21}            \\ 
+                           \end{bmatrix}
+$$
 
 接下来我们还要引入 **trace** 求迹运算，简写为 **tr**。对于一个给定的 $n \times n$ 的方阵$A$，它的迹定义为对角项之和：
 
@@ -196,3 +200,4 @@ $$ \theta= (X^TX )^{-1}X^T\overset{\rightarrow} y   $$
 
 
 
+## 3 概率解释
