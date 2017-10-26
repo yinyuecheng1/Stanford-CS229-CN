@@ -1,19 +1,18 @@
 # 当前文件目录结构
 
-根目录下：
-| English_Materials_and_Assignments （英文材料都放在这里）
-| -- Class_Notes （课程笔记，**当前主要翻译对象**）
-| -- Discussion_Section （讨论内容）
-| -- Problem_Set  （问题集）
-| -- Section_Notes （小节笔记）
-| -- Supplementary_Notes（补充材料）
-| Translation （翻译区，文件存放目录）
-| -- Notes （课程笔记）
-| ---- image （Markdown图片存放区域）
+根目录下：  
+| English_Materials_and_Assignments （英文材料都放在这里）   
+| -- Class_Notes （课程笔记，**当前主要翻译对象**）  
+| -- Discussion_Section （讨论内容）  
+| -- Problem_Set  （问题集）  
+| -- Section_Notes （小节笔记）  
+| -- Supplementary_Notes（补充材料）  
+| Translation （翻译区，文件存放目录）  
+| -- Notes （课程笔记）  
+| ---- image （Markdown图片存放区域）  
 
 # 需要的工作
 完成`/Translation`目录下的翻译任务，当前的任务都会在 Issues 板块给出，认领后会有 `assignment` 标记，在对应的 issue 下更新每个任务的状态和具体信息。
-
 给出的参考中文文档存在相当多的瑕疵，不能仅仅复制粘贴。
 
 ## 请认领自己的任务部分，推荐分章节完成
