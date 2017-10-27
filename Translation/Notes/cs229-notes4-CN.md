@@ -3,18 +3,12 @@
 
 
 
-# Part IV Generative Learning algorithms
+# Part VI Learning Theory
 
-##  1 Gaussian discriminant analysis
+## 1 Bias/variance tradeoff
 
-###  1.1 The multivariate normal distribution
+## 2 Preliminaries
 
-###  1.2 The Gaussian Discriminant Analysis model
+## 3 The case of finite H
 
-###  1.3 Discussion: GDA and logistic regression
-
-## 2 Naive Bayes
-
-### 2.1 Laplace smoothing
-
-### 2.2 Event models for text classification
+## 4 The case of infinite H
