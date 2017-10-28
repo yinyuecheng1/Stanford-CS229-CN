@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /translation/cs229-notes1-cn
+permalink: ./translation/cs229-notes1-cn
 ---
 
 
