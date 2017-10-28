@@ -42,7 +42,9 @@ $$p(y\mid x;\theta)=(h_\theta(x))^y(1-h_\theta(x))^{1-y}$$
 
 假定给定的 $m$ 个样本之间都是相互独立的，我们可以这样写参数的似然函数：  
 
-$$ L(\theta) = p(\overset{\rightarrow}{y} \mid X;\theta) \\ = \prod_{i=1}^{m} p(y^{(i)}\mid x^{(i)};\theta) \\ =  \prod_{i=1}^{m}  (h_\theta(x^{(i)}))^{y^{(i)}}(1-h_\theta(x^{(i)}))^{{1-y}^{(i)}}$$
+$$ 
+L(\theta) = p(\overset{\rightarrow}{y} \mid X;\theta) \\ = \prod_{i=1}^{m} p(y^{(i)}\mid x^{(i)};\theta) \\ =  \prod_{i=1}^{m}  (h_\theta(x^{(i)}))^{y^{(i)}}(1-h_\theta(x^{(i)}))^{1-y^{(i)} } 
+$$
 
 与前面的做法一样，最大化对数似然的形式会简单一些：
 
