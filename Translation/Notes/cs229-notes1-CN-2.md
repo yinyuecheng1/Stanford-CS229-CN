@@ -15,7 +15,38 @@
 
 $$ h_\theta(x)=g(\theta^Tx)=\frac {1}{1+e^{-\theta^Tx}}$$
 
-其中 $g(z)=\frac {1}{1+e^{-z}}$ 被称为
+其中 $g(z)=\frac {1}{1+e^{-z}}$ 被称为 **logistic 函数（logistic function）** ，此处使用的也被叫作 **sigmoid 函数（sigmoid function）** ，下面是图示：  
+
+![](./image/notes1-logistics.jpg)
+
+注意到当 $z\rightarrow \infty$ 时，$g(z)$ 趋近于 1， $z\rightarrow -\infty$ 时，$g(z)$ 趋近于 0 ，因此也表明了 $h(x)$ 总是位于 0 和 1 之间。和之前一样，我们约定了特征 $x_o=1$ ，因此有 $\theta^Tx=\theta_0+\sum^n_{j=1}\theta_j x_j$ 。
+
+从现在开始，我们把 $g$ 当作是给定的函数了。其它能够从0到1之间光滑递增的函数也可以被使用，但是这其中有一些原因我们以后会讲到（当讲到广义线性模型GLMs和生成学习算法时），logistic 函数的选择是十分合理自然的。在继续我们的下一个话题前，这里有一个关于 sigmoid 函数导数的重要推导，我们写作 $g'$ :  
+$$
+g'(x) = \frac{d}{dz}\frac {1}{1+e^{-z}} \\
+        =\frac {1}{(1+e^{-z})^2} (e^{-z})  \\
+        = \frac {1}{(1+e^{-z})}  (1-\frac {1}{(1+e^{-z})} ) \\
+        = g(z) (1-g(z))
+$$
+那么，在给定了 logistic 回归模型后，我们如何根据它来拟合 $\theta$ 呢？我们之前已经讲过了，在一系列假设的前提下，如何使用极大似然估计来推导出最小二乘回归。让我们赋予我们的分类模型一系列的概率假设，接着通过极大似然来拟合参数：  
+
+让我们假设：  
+
+$$ P(y=1\mid x;\theta) = h_\theta(x) $$
+
+$$ P(y=0\mid x;\theta) = 1-h_\theta(x) $$
+
+注意，上面的式子可以改写成一个更加简洁的形式：  
+
+$$p(y\mid x;\theta)=(h_\theta(x))^y(1-h_\theta(x))^{1-y}$$
+
+假定给定的 $m$ 个样本之间都是相互独立的，我们可以这样写参数的似然函数：  
+
+$$ L(\theta) = p(\overset{\rightarrow}{y} \mid X;\theta) \\ = \prod_{i=1}^{m} p(y^{(i)}\mid x^{(i)};\theta) \\ =  \prod_{i=1}^{m}  (h_\theta(x^{(i)}))^{y^{(i)}}(1-h_\theta(x^{(i)}))^{{1-y}^{(i)}}$$
+
+与前面的做法一样，最大化对数似然的形式会简单一些：
+
+$$ $$
 
 
 
