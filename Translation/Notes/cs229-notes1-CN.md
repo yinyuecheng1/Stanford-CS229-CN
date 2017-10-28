@@ -58,7 +58,7 @@ $$ J(\theta)=\frac {1}{2} \sum_{i=1}^{m} {(h_\theta(x^{(i)})-y^{(i)})^2} $$
 
 ## 1 最小均方算法（LMS algorithm）
 
-我们希望选择一个 $\theta$ 来使得 $J(\theta)$ 最小。为此我们将使用一种搜索算法，从 $\theta$ 的某些 “初始猜测值（initial guess）” 开始，接着不断地对 $\theta $ 进行调整使 $J(\theta)$ 的值越来越小，最佳情况是收敛到一个最终的 $\theta$ 使得 $J(\theta)$ 最小。具体来说，让我们考虑**梯度下降（gradient descent）**算法，它始于一些初始的 $\theta$ 并多次执行更新：
+我们希望选择一个 $\theta$ 来使得 $J(\theta)$ 最小。为此我们将去寻找一种算法，从 $\theta$ 的某些 “初始猜测值（initial guess）” 开始，接着不断地对 $\theta $ 进行调整使 $J(\theta)$ 的值越来越小，最佳情况是收敛到一个最终的 $\theta$ 使得 $J(\theta)$ 达到我们期望的最小值。具体来说，让我们考虑**梯度下降（gradient descent）**算法，它始于一些初始的 $\theta$ 并多次执行更新：
 
 $$ \theta_j:=\theta_j - \alpha \frac {\partial}{\partial \theta _j} J(\theta) $$
 
@@ -108,7 +108,7 @@ $$ \theta_j:=\theta_j +\alpha (y^{(i)}-h_\theta(x^{(i)}))x_j^{(i)} $$
 
 ### 2.1 矩阵微分（Matrix derivatives）
 
-假设有一个函数 $ f: \mathbb R^{m\times n} \mapsto \mathbb R$ ，表示从 $m \times n$ 矩阵映射到实数域，那么就可以定义函数 $f$ 关于 $A$ 的导数为如下形式：  
+假设有一个函数 $ f: \mathbb R^{m\times n} \mapsto \mathbb R$ ，表示从 $m \times n$ 矩阵映射到实数域，那么就可以定义函数 $f$ 关于矩阵 $A$ 的导数为如下形式：  
 
 ![matrix-derivatives](./image/notes1-matrix-derivatives.jpg)
 
@@ -124,7 +124,7 @@ $$ f(A) = \frac {3}{2}A_{11}+5A_{12}^2+A_{21}A_{22} $$
 
 ![](./image/notes1-A-gd.jpg)
 
-接下来我们还要引入 **trace** 求迹运算，简写为 **tr**。对于一个给定的 $n \times n$ 的方阵$A$，它的迹定义为对角项之和：
+接下来我们还要引入 **trace** 求迹运算，简写为 **tr**。对于一个给定的 $n \times n$ 的方阵$A$，它的迹定义为主对角线上元素之和：
 
 $$ trA=\sum_{i=1}^n A_{ii} $$
 
@@ -208,9 +208,9 @@ $$p(\epsilon^{(i)})=\frac{1}{\sqrt {2\pi}\sigma}exp(-\frac{(\epsilon{(i)})^2}{2\
 
 $$p(y^{(i)}\mid x^{(i)};\theta)=\frac{1}{\sqrt {2\pi}\sigma} exp(- \frac {(y^{(i)}-\theta^Tx^{(i)})^2} {2\sigma^2})$$
 
-这里的记号 ”$p(y^{(i)}\mid x^{(i)};\theta)$“ 表示的是这是一个给定 $ x^{(i)} $ 的 $y^{(i)} $ 的分布，并且由 $\theta$ 参数化。注意我们这里不能将使用条件 $\theta (p(y^{(i)}\mid x^{(i)},\theta))$ ，因为 $\theta$ 并不是一个随机变量。此处 $y^{(i)}$ 的分布还可以写成 $y^{(i)} \mid x^{(i)};\theta \sim \cal N(\theta^Tx^{(i)},\sigma^2)$.
+这里的记号 ”$p(y^{(i)}\mid x^{(i)};\theta)$“ 表示的是这是一个以及给定 $ x^{(i)} $ 的 $y^{(i)} $ 的分布，并且由 $\theta$ 参数化。注意我们这里不能将使用条件 $\theta (p(y^{(i)}\mid x^{(i)},\theta))$ ，因为 $\theta$ 并不是一个随机变量。此处 $y^{(i)}$ 的分布还可以写成 $y^{(i)} \mid x^{(i)};\theta \sim \cal N(\theta^Tx^{(i)},\sigma^2)$.
 
-给定设计矩阵$ X$ （包含了所有的 $x^{(i)}$）和 $\theta$， 那么$y^{(i)}$ 的分布是什么？数据的概率以 $p(\overset{\rightarrow}y \mid X;\theta)$ 的形式给出。当 $\theta$ 取固定值的时候，这经常被看作是一个关于 $\overset{\rightarrow}y$ （或者是 $X$ ）的函数。当我们想要显式地把它看做一个关于 $\theta$  的函数时，我们称之为 **似然（likelihood）** 函数：  
+给定设计矩阵$ X​$ （包含了所有的 $x^{(i)}​$）和 $\theta​$， 那么$y^{(i)}​$ 的分布是什么？数据的概率以 $p(\overset{\rightarrow}y \mid X;\theta)​$ 的形式给出。当 $\theta​$ 取固定值的时候，这经常被看作是一个关于 $\overset{\rightarrow}y​$ （或者是 $X​$ ）的函数。当我们想要显式地把它看做一个关于 $\theta​$  的函数时，我们称之为 **似然（likelihood）** 函数：  
 
 ![](./image/notes1-likelihood.jpg)
 
